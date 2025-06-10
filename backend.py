@@ -152,7 +152,7 @@ def upload_and_ask():
         sas_url = f"{blob_client.url}?{sas_token}"
 
         # Analyze file using Document Intelligence
-        poller = doc_client.begin_analyze_document_from_url("prebuilt-read", sas_url)
+        poller = doc_client.begin_analyze_document_from_url("prebuilt-document", sas_url)
         result = poller.result()
         full_text = " ".join([p.content for p in result.paragraphs]) if result.paragraphs else "No content found"
 
@@ -203,7 +203,7 @@ def extract_text():
         sas_url = f"{blob_client.url}?{sas_token}"
 
         # Call Document Intelligence to extract content
-        poller = doc_client.begin_analyze_document_from_url("prebuilt-document", sas_url)
+        poller = doc_client.begin_analyze_document_from_url("prebuilt-read", sas_url)
         result = poller.result()
         full_text = " ".join([p.content for p in result.paragraphs]) if result.paragraphs else "No content found"
 
