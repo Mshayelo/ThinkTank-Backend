@@ -1,0 +1,13 @@
+python-dotenv
+
+flask  
+
+openai  
+azure-search-documents  
+azure-core
+azure-identity
+azure-storage-blob
+azure-ai-formrecognizer  
+ 
+config
+
